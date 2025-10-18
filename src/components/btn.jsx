@@ -1,10 +1,11 @@
-function Btn({ texto, children, onClick }) {
+function Btn({ texto, children, onClick ,mostrarCartas}) {
   return (
     <button className="btn" onClick={onClick}>
-      <div className="btn-content">
-        
+      <div className="btn-content">               
         <span className="btn-text">{texto}</span>
-        {children} {(children===0 || children===1) ? " clic" : " clics"} {/* imagen */} {/* texto debajo */}
+        {children} {mostrarCartas && (
+          (children === 0 || children === 1) ? " clic" : " clics"
+        )}
       </div>
     </button>
   );

@@ -5,8 +5,10 @@ import { React, useState } from "react";
 
 function App() {
   const [mostrarCartas, setMostrarCartas] = useState(false);
+
   const [texto, setTexto] = useState("Entrar");
   const [contador, setContador] = useState(0);
+
 
   const handleClick = () => {
     console.log("Botón clickeado", mostrarCartas);
@@ -14,11 +16,14 @@ function App() {
     setTexto(mostrarCartas ? "Entrar" : "Salir");
     console.log("Botón clickeado", mostrarCartas);
   };
+
+
    const handleClickCounter = () => {
     console.log("Botón clickeado", mostrarCartas);
     setContador(contador + 1);
     console.log("Contador:", contador);
   };
+
 
   return (
     <div className="app-container">
@@ -42,11 +47,11 @@ function App() {
               backText="Reverso 1"
             />
             <Btn texto="Salir" onClick={handleClick}>
-              <img src="../public/img/salida.gif" alt="salir" />
+              <img src="../public/img/salida.gif" alt="salir"/>
             </Btn>
-            <Btn texto="El Contador va en" onClick={handleClickCounter} children={contador}>
-              
+            <Btn texto="El Contador va en" onClick={handleClickCounter} children={contador}mostrarCartas={mostrarCartas}>             
             </Btn>
+            
           </div>
           
         </div>
